@@ -3,13 +3,21 @@
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "author": "hileix <304192604@qq.com> (https://github.com/hileix)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hileix/rc-count-down.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hileix/rc-count-down/issues"
+  },
+  "homepage": "https://github.com/hileix/rc-count-down#readme",
   "scripts": {
     "dev": "start-storybook",
     "deploy": "storybook-to-ghpages",
     "compile": "antd-tools run compile"
   },
   "keywords": [],
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.3",
