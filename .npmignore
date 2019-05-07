@@ -1,0 +1,4 @@
+.storybook/
+components/
+node_modules/
+scripts/
