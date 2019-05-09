@@ -1,4 +1,4 @@
-# react-countdown
+# rc-count-down
 
 ## 基于 React 的倒计时组件
 
