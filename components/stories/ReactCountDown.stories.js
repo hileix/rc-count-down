@@ -49,6 +49,38 @@ const RemainingTimePoints = () => {
   );
 };
 
+class InstanceProp extends React.Component {
+  getCountDownRef = node => {
+    this.countDownRef = node;
+  };
+
+  getUseTime = () => {
+    alert(this.countDownRef.useTime);
+  };
+
+  getTotalTime = () => {
+    alert(this.countDownRef.totalTime);
+  };
+
+  getRemainTime = () => {
+    alert(this.countDownRef.remainTime);
+  };
+
+  render() {
+    return (
+      <div>
+        <ReactCountDown time={10 * 60} ref={this.getCountDownRef} />
+        <button onClick={this.getUseTime}>查看用时（单位：秒）</button>
+        <br />
+        <button onClick={this.getTotalTime}>查看总时间（单位：秒）</button>
+        <br />
+        <button onClick={this.getRemainTime}>查看剩余时间（单位：秒）</button>
+        <br />
+      </div>
+    );
+  }
+}
+
 storiesOf('ReactCountDown 倒计时', module)
   .add('time', () => <Time />, {
     notes: {
@@ -61,6 +93,11 @@ storiesOf('ReactCountDown 倒计时', module)
     }
   })
   .add('remainingTimePoints', () => <RemainingTimePoints />, {
+    notes: {
+      markdown: docs
+    }
+  })
+  .add('实例属性', () => <InstanceProp />, {
     notes: {
       markdown: docs
     }

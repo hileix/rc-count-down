@@ -54,12 +54,19 @@ export default class ReactCountDown extends React.Component<
     super(props);
     const { time } = props;
 
+    this.totalTime = time;
+    this.remainTime = time;
+
     this.state = {
       time
     };
   }
 
   private timer: any;
+
+  totalTime: number; // 总时间
+  useTime: number = 0; // 用时（单位：秒）
+  remainTime: number; // 剩余时间
 
   componentDidMount = () => {
     this.setTime();
@@ -86,8 +93,13 @@ export default class ReactCountDown extends React.Component<
             timePoint.callback && timePoint.callback();
           }
         });
+      // 剩余时间
+      this.remainTime = time;
+      // 用时
+      this.useTime = this.totalTime - this.remainTime;
 
-      this.setState({ time });
+      this.setState({ time: time });
+
       this.setTime();
     }, 1000);
   };

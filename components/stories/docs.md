@@ -29,3 +29,43 @@
 | :------: | :----------: | :----: | :----------------------------: |
 |  point   |   `number`   |   -    | 距离倒计时的时间点（单位：秒） |
 | callback | `function()` |   -    |        在该时间点的回调        |
+
+## Instance property
+
+- totalTime: 总时间（单位：秒）
+- useTime: 用时（单位：秒）
+- remainTime: 剩余时间（单位：秒）
+
+```javascript
+class InstanceProp extends React.Component {
+  getCountDownRef = node => {
+    this.countDownRef = node;
+  };
+
+  getUseTime = () => {
+    alert(this.countDownRef.useTime);
+  };
+
+  getTotalTime = () => {
+    alert(this.countDownRef.totalTime);
+  };
+
+  getRemainTime = () => {
+    alert(this.countDownRef.remainTime);
+  };
+
+  render() {
+    return (
+      <div>
+        <ReactCountDown time={10 * 60} ref={this.getCountDownRef} />
+        <button onClick={this.getUseTime}>查看用时（单位：秒）</button>
+        <br />
+        <button onClick={this.getTotalTime}>查看总时间（单位：秒）</button>
+        <br />
+        <button onClick={this.getRemainTime}>查看剩余时间（单位：秒）</button>
+        <br />
+      </div>
+    );
+  }
+}
+```
